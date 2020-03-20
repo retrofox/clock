@@ -1,13 +1,15 @@
-
 /**
- * WordPress dependencies
+ * External dependencies
  */
-import { __ } from '@wordpress/i18n';
+import moment from 'moment';
+
 
 export default ( { className } ) => {
+	const now = moment();
+
 	return (
 		<p className={ className }>
-			{ __( 'Clock!!!', 'clock-block' ) }
+			{ now.format( 'HH:mm:ss' ) }
 		</p>
 	);
 };
