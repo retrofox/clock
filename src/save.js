@@ -2,16 +2,17 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
 
 const ClockBlockSave = () => {
+
+	const cssClasses = 'wp-block-create-block-clock';
+
 	return (
-		<p>
-			{ __(
-				'Clock – hello from the saved content!',
-				'create-block'
-			) }
-		</p>
+		<div className={ cssClasses }>
+			<div className="clock">
+				Clock!!
+			</div>
+		</div>
 	);
 };
 
