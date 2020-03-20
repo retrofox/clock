@@ -9,7 +9,7 @@ import moment from 'moment';
 import { useState, useEffect, Fragment } from '@wordpress/element';
 import { __experimentalUseColors as useColors } from '@wordpress/block-editor';
 
-export default ( { className } ) => {
+const ClockBlock = ( { className } ) => {
 	const [ now, setNow ] = useState( moment() );
 
 	// Add colors.
@@ -44,3 +44,5 @@ export default ( { className } ) => {
 		</Fragment>
 	);
 };
+
+export default ClockBlock;
