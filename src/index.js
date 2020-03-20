@@ -16,6 +16,8 @@ import { __ } from '@wordpress/i18n';
  * Internal dependencies
  */
 import edit from './edit';
+import save from './save';
+
 
 
 /**
@@ -49,7 +51,7 @@ registerBlockType( 'create-block/clock', {
 	 * An icon property should be specified to make it easier to identify a block.
 	 * These can be any of WordPress’ Dashicons, or a custom svg element.
 	 */
-	icon: 'smiley',
+	icon: 'clock',
 
 	/**
 	 * Optional block extended support features.
@@ -59,34 +61,7 @@ registerBlockType( 'create-block/clock', {
 		html: false,
 	},
 
-	/**
-	 * The edit function describes the structure of your block in the context of the editor.
-	 * This represents what the editor will render when the block is used.
-	 *
-	 * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
-	 *
-	 * @param {Object} [props] Properties passed from the editor.
-	 *
-	 * @return {WPElement} Element to render.
-	 */
 	edit,
 
-	/**
-	 * The save function defines the way in which the different attributes should be combined
-	 * into the final markup, which is then serialized by the block editor into `post_content`.
-	 *
-	 * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
-	 *
-	 * @return {WPElement} Element to render.
-	 */
-	save() {
-		return (
-			<p>
-				{ __(
-					'Clock – hello from the saved content!',
-					'create-block'
-				) }
-			</p>
-		);
-	},
+	save,
 } );
