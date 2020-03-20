@@ -9,7 +9,7 @@ import moment from 'moment';
 import { useState, useEffect, Fragment } from '@wordpress/element';
 import { __experimentalUseColors as useColors } from '@wordpress/block-editor';
 
-const ClockBlock = ( { className } ) => {
+const ClockBlockEdit = ( { className } ) => {
 	const [ now, setNow ] = useState( moment() );
 
 	// Add colors.
@@ -19,7 +19,7 @@ const ClockBlock = ( { className } ) => {
 		BackgroundColor,
 	} = useColors( [
 		{ name: 'textColor', property: 'color' },
-		{ name: 'backgroundColor', property: 'background-color' },
+		{ name: 'backgroundColor', property: 'backgroundColor' },
 	], {
 		colorPanelProps: {
 			initialOpen: true,
@@ -51,4 +51,4 @@ const ClockBlock = ( { className } ) => {
 	);
 };
 
-export default ClockBlock;
+export default ClockBlockEdit;
