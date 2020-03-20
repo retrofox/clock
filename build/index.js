@@ -209,7 +209,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ClockBlock = function ClockBlock(_ref) {
+var ClockBlockEdit = function ClockBlockEdit(_ref) {
   var className = _ref.className;
 
   var _useState = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(moment__WEBPACK_IMPORTED_MODULE_2___default()()),
@@ -223,7 +223,7 @@ var ClockBlock = function ClockBlock(_ref) {
     property: 'color'
   }, {
     name: 'backgroundColor',
-    property: 'background-color'
+    property: 'backgroundColor'
   }], {
     colorPanelProps: {
       initialOpen: true
@@ -249,7 +249,7 @@ var ClockBlock = function ClockBlock(_ref) {
   }, now.format('HH:mm:ss'))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ClockBlock);
+/* harmony default export */ __webpack_exports__["default"] = (ClockBlockEdit);
 
 /***/ }),
 
