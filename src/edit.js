@@ -6,15 +6,19 @@ import moment from 'moment';
 /**
  * WordPress dependencies
  */
-import { useState } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 
 export default ( { className } ) => {
 	const [ now, setNow ] = useState( moment() );
 
-	const timer = setInterval( () => {
-		setNow( moment() );
-	}, 1000 );
-	
+	useEffect( () => {
+		const timer = setInterval( () => {
+			setNow( moment() );
+		}, 1000 );
+
+		return () => window.clearInterval( timer );
+	}, [] );
+
 	return (
 		<div className={ className }>
 			<div className="clock">
