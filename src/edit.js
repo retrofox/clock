@@ -15,6 +15,8 @@ const ClockBlock = ( { className } ) => {
 	// Add colors.
 	const {
 		InspectorControlsColorPanel,
+		TextColor,
+		BackgroundColor,
 	} = useColors( [
 		{ name: 'textColor', property: 'color' },
 		{ name: 'backgroundColor', property: 'background-color' },
@@ -36,11 +38,15 @@ const ClockBlock = ( { className } ) => {
 	return (
 		<Fragment>
 			{ InspectorControlsColorPanel }
-			<div className={ className }>
-				<div className="clock">
-					{ now.format( 'HH:mm:ss' ) }
-				</div>
-			</div>
+			<TextColor>
+				<BackgroundColor>
+					<div className={ className }>
+						<div className="clock">
+							{ now.format( 'HH:mm:ss' ) }
+						</div>
+					</div>
+				</BackgroundColor>
+			</TextColor>
 		</Fragment>
 	);
 };

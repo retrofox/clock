@@ -6,7 +6,6 @@
  */
 
 .wp-block-create-block-clock {
-	background-color: #000;
 	height: 100px;
 	line-height: 100px;
 }
@@ -15,6 +14,13 @@
 	font-weight: bold;
 	font-size: 50px;
 	text-align: center;
+}
+
+.wp-block-create-block-clock:not(.has-background) {
+	background-color: #000;
+}
+
+.wp-block-create-block-clock:not(.has-text-color) .clock {
 	color: #0F0;
 }
 
