@@ -13,6 +13,12 @@ import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 
 /**
+ * Internal dependencies
+ */
+import edit from './edit';
+
+
+/**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
@@ -63,13 +69,7 @@ registerBlockType( 'create-block/clock', {
 	 *
 	 * @return {WPElement} Element to render.
 	 */
-	edit( { className } ) {
-		return (
-			<p className={ className }>
-				{ __( 'Clock – hello from the editor!', 'create-block' ) }
-			</p>
-		);
-	},
+	edit,
 
 	/**
 	 * The save function defines the way in which the different attributes should be combined
