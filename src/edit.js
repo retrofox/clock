@@ -12,13 +12,19 @@ import { __experimentalUseColors as useColors } from '@wordpress/block-editor';
 export default ( { className } ) => {
 	const [ now, setNow ] = useState( moment() );
 
+	// Add colors.
 	const {
 		InspectorControlsColorPanel,
 	} = useColors( [
 		{ name: 'textColor', property: 'color' },
 		{ name: 'backgroundColor', property: 'background-color' },
-	] );
+	], {
+		colorPanelProps: {
+			initialOpen: true,
+		}
+	} );
 
+	// Start timer (once).
 	useEffect( () => {
 		const timer = setInterval( () => {
 			setNow( moment() );
