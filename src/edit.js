@@ -3,9 +3,13 @@
  */
 import moment from 'moment';
 
+/**
+ * WordPress dependencies
+ */
+import { useState } from '@wordpress/element';
 
 export default ( { className } ) => {
-	const now = moment();
+	const [ now, setNow ] = useState( moment() );
 
 	return (
 		<div className={ className }>
