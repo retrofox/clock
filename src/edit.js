@@ -8,8 +8,10 @@ export default ( { className } ) => {
 	const now = moment();
 
 	return (
-		<p className={ className }>
-			{ now.format( 'HH:mm:ss' ) }
-		</p>
+		<div className={ className }>
+			<div className="clock">
+				{ now.format( 'HH:mm:ss' ) }
+			</div>
+		</div>
 	);
 };
