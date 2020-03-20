@@ -108,9 +108,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var className = _ref.className;
   var now = moment__WEBPACK_IMPORTED_MODULE_1___default()();
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: className
-  }, now.format('HH:mm:ss'));
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "clock"
+  }, now.format('HH:mm:ss')));
 });
 
 /***/ }),
