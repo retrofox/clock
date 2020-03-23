@@ -7,6 +7,8 @@ import classnames from 'classnames';
 /**
  * WordPress dependencies
  */
+import { getColorClassName } from '@wordpress/block-editor';
+
 
 const ClockBlockSave = ( { attributes } ) => {
 
@@ -17,13 +19,18 @@ const ClockBlockSave = ( { attributes } ) => {
 		customBackGroundColor,
 	} = attributes;
 
+	const textClassname = getColorClassName( 'color', textColor );
+	const backgroundClassname = getColorClassName(
+		'background-color',
+		backgroundColor
+	);
+
 	const cssClasses = classnames( 'wp-block-create-block-clock', {
 		'has-text-color': textColor || customTextColor,
 		'has-background-color': backgroundColor || customBackGroundColor,
+		[ textClassname ]: textClassname,
+		[ backgroundClassname ]: backgroundClassname,
 	} );
-
-	console.log( { attributes } );
-	console.log( { textColor } );
 
 	return (
 		<div className={ cssClasses }>
