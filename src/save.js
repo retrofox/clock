@@ -16,7 +16,7 @@ const ClockBlockSave = ( { attributes } ) => {
 		textColor,
 		customTextColor,
 		backgroundColor,
-		customBackGroundColor,
+		customBackgroundColor,
 	} = attributes;
 
 	const textClassname = getColorClassName( 'color', textColor );
@@ -25,15 +25,33 @@ const ClockBlockSave = ( { attributes } ) => {
 		backgroundColor
 	);
 
+	// Apply CSS classes.
 	const cssClasses = classnames( 'wp-block-create-block-clock', {
 		'has-text-color': textColor || customTextColor,
-		'has-background-color': backgroundColor || customBackGroundColor,
+		'has-background-color': backgroundColor || customBackgroundColor,
 		[ textClassname ]: textClassname,
 		[ backgroundClassname ]: backgroundClassname,
 	} );
 
+	// Apply inline styles.
+	const style = {};
+
+	if ( customTextColor ) {
+		style.color = customTextColor;
+	}
+
+	if ( customBackgroundColor ) {
+		style[ 'background-color' ] = customBackgroundColor;
+	}
+
 	return (
-		<div className={ cssClasses }>
+		<div
+			className={ cssClasses }
+			style={ Object.keys( style ).length
+				? style
+				: null
+			}
+		>
 			<div className="clock">
 				Clock!!
 			</div>
